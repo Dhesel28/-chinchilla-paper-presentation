@@ -73,6 +73,9 @@ This massive experimental sweep ensured robust estimates across different scales
 - N = parameters, D = training tokens
 - Directly estimate optimal scaling coefficients
 
+![Figure 3: IsoFLOP Curves](images/figure3_isoflop_curves.png)
+*Figure 3: IsoFLOP profiles showing loss contours and optimal frontier for different compute budgets.*
+
 ### 3. Validated with a Large-Scale Model: Chinchilla
 
 After determining the optimal scaling relationship, they validated by training:
@@ -93,6 +96,9 @@ D_opt ∝ C^0.49    (optimal tokens scale as compute^0.49)
 Practically speaking: **For every doubling of compute budget, double both model size and training data.**
 
 This directly contradicts Kaplan et al.'s recommendation (scale model size 5.5×, tokens 1.8×).
+
+![Figure 1: Scaling Predictions Comparison](images/figure1_scaling_predictions.png)
+*Figure 1: Comparison of Chinchilla vs. Kaplan scaling predictions showing optimal model size and training tokens as a function of compute budget.*
 
 ### Concrete Implications
 
@@ -118,6 +124,9 @@ Despite being **4× smaller** than Gopher, Chinchilla achieved superior performa
 | HumanEval (code) | 10.3% pass@1 | **13.1%** pass@1 | +27% |
 | MATH | 6.1% | **7.5%** | +23% |
 | Reading Comprehension | 87.3% | **88.4%** | +1.1% |
+
+![Figure 6: MMLU Results](images/figure6_mmlu_results.png)
+*Figure 6: Massive Multitask Language Understanding (MMLU) benchmark results comparing Chinchilla to other large language models.*
 
 **Additional benefits of Chinchilla:**
 - **4× smaller inference costs** (70B vs 280B parameters)
@@ -145,6 +154,9 @@ The Chinchilla results demonstrated that the field had been scaling inefficientl
 - Storage/Memory: 4× reduction in hardware requirements
 
 This wasn't just an academic finding—it had immediate practical implications worth millions of dollars for AI companies.
+
+![Figure 4: Parametric Loss Function Fit](images/figure4_parametric_fit.png)
+*Figure 4: Fitted parametric loss function L(N, D) = E + A/N^α + B/D^β with loss contours showing the compute-optimal frontier.*
 
 ___
 
@@ -1177,6 +1189,32 @@ Chinchilla Optimal: Yes ✓
 
 **Chinchilla's lasting contribution:**
 It challenged the field to think critically about resource allocation and demonstrated that **efficiency matters as much as scale**.
+
+___
+
+# Code Demonstration
+
+## Interactive Jupyter Notebook
+
+Explore the Chinchilla scaling laws interactively with Python code demonstrations:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Dhesel28/-chinchilla-paper-presentation/blob/main/chinchilla_scaling_demo.ipynb)
+
+**What's included:**
+- Parametric loss function implementation: `L(N, D) = E + A/N^α + B/D^β`
+- Optimal scaling relationship calculators
+- Visualizations comparing Chinchilla vs Kaplan scaling laws
+- Loss contour plots and compute-optimal frontier
+- Token-to-parameter ratio analysis
+- Interactive calculator: input your compute budget, get optimal model configuration
+
+**Features:**
+- 7 interactive sections with executable code
+- Comparison of GPT-3, Gopher, Chinchilla, LLaMA models
+- Real-world examples and practical recommendations
+- Visualizations of scaling relationships
+
+[View on GitHub](https://github.com/Dhesel28/-chinchilla-paper-presentation/blob/main/chinchilla_scaling_demo.ipynb)
 
 ___
 
