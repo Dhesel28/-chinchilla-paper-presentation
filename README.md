@@ -392,7 +392,7 @@ Explore the Chinchilla scaling laws interactively:
 - Interactive calculator: input compute budget → get optimal model configuration
 - Comparison of GPT-3, Gopher, Chinchilla, LLaMA models
 
-[View on GitHub](https://github.com/Dhesel28/-chinchilla-paper-presentation/blob/main/chinchilla_scaling_demo.ipynb) | [View PDF Output](chinchilla_scaling_demo.pdf)
+[View on GitHub](https://github.com/Dhesel28/-chinchilla-paper-presentation/blob/main/chinchilla_scaling_demo.ipynb) 
 
 ___
 
